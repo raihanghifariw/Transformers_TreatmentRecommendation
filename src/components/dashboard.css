@@ -1,6 +1,7 @@
 .dashboard {
   height: 100vh;
-  display: flex;          /* ⬅️ ต้องมี */
+  display: flex;
+  /* ⬅️ ต้องมี */
   flex-direction: column;
   background: rgba(123, 132, 188, 0.11);
   color: black;
@@ -13,9 +14,9 @@
 .main-layout {
   display: flex;
   gap: 16px;
-  flex: 1;       
-  min-height: 0;  
-  align-items: stretch;        
+  flex: 1;
+  min-height: 0;
+  align-items: stretch;
 }
 
 
@@ -36,17 +37,20 @@
 
 .vital-column {
   display: flex;
-  width: 67%;
+  width: 100%;
   flex-direction: column;
   gap: 24px;
-  height: 100%;           /* ⬅️ สำคัญ */
+  height: 100%;
+  /* ⬅️ สำคัญ */
 }
 
 .vital-card {
   display: flex;
   flex-direction: column;
-  flex: 1;                /* ⬅️ 3 กล่องแบ่งสูงเท่ากัน */
-  min-height: 0;          /* ⬅️ ป้องกัน chart overflow */
+  flex: 1;
+  /* ⬅️ 3 กล่องแบ่งสูงเท่ากัน */
+  min-height: 0;
+  /* ⬅️ ป้องกัน chart overflow */
 }
 
 
@@ -75,7 +79,8 @@
 
 .vital-chart {
   flex: 1;
-  min-height: 0;          /* ⬅️ Recharts ต้องการ */
+  min-height: 0;
+  /* ⬅️ Recharts ต้องการ */
 }
 
 

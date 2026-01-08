@@ -1,0 +1,15 @@
+.app-container {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    overflow: hidden;
+    /* Prevent body scroll if dashboard is scrollable */
+}
+
+/* Adjust dashboard to take remaining height */
+.app-container .dashboard {
+    flex: 1;
+    height: auto !important;
+    /* Override 100vh in dashboard.css */
+    overflow-y: auto;
+}

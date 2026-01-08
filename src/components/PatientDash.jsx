@@ -1,15 +1,22 @@
 import { LineChart, Line, ResponsiveContainer } from "recharts";
 import "./dashboard.css";
 
+import UserIco from '../assets/User Icon.svg?react';
+import AgeIco from '../assets/Fast Running Icon.svg?react';
+import MeasureIco from '../assets/Measure Height Icon.svg?react';
+import HeartRateIco from '../assets/Heart Pulse Fill.svg?react';
+import HeartPlusIco from '../assets/Heart Plus Outline Icon.svg?react';
+import LungIco from '../assets/Lung Icon.svg?react';
+
 const mockWave = Array.from({ length: 30 }, (_, i) => ({
   x: i,
   y: Math.sin(i / 3) * 10 + 50,
 }));
 
-const VitalCard = ({ title, value, unit }) => (
+const VitalCard = ({ title, value, unit, Ico}) => (
   <div className="card vital-card">
     <div className="vital-header">
-      <span className="vital-title">{title}</span>
+      <span className="vital-title"><Ico className="svg-icon" style={{ width:'15px', height:'15px', fill:'gray' }}/>{title}</span>
       <span className="vital-value">
         {value} <small>{unit}</small>
       </span>
@@ -40,21 +47,21 @@ export default function PatientDashboard() {
         {/* Left: Personal Detail */}
         <div className="card patient-card">
           <h2>Patient Details</h2>
-          <p>Name: Dewi Rahmawati</p>
-          <p>Age: 45 years</p>
-          <p>Height / Weight: 172 cm / 68 kg</p>
+          <p><UserIco className="svg-icon" style={{ width:'15px', height: '15px'}}/>Name: Dewi Rahmawati</p>
+          <p><AgeIco className="svg-icon" style={{ width:'15px', height: '15px'}}/>Age: 45 years</p>
+          <p><MeasureIco className="svg-icon" style={{ width:'15px', height: '15px'}}/>Height / Weight: 172 cm / 68 kg</p>
 
           <img
-            src="https://dummyimage.com/200x300/0f172a/38bdf8&text=Human+Body"
+            src="src/assets/growing-xray-human-body.png"
             alt="body"
           />
         </div>
 
         {/* Right: Vital Cards */}
         <div className="vital-column">
-          <VitalCard title="Heart Rate" value={72} unit="bpm" />
-          <VitalCard title="Oxygen Saturation" value={99} unit="%" />
-          <VitalCard title="Respiratory Rate" value={18} unit="rpm" />
+          <VitalCard title="Heart Rate" value={72} unit="bpm" Ico={HeartRateIco}/>
+          <VitalCard title="Oxygen Saturation" value={99} unit="%" Ico={HeartPlusIco}/>
+          <VitalCard title="Respiratory Rate" value={18} unit="rpm" Ico={LungIco}/>
         </div>
       </div>
 

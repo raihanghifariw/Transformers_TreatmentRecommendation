@@ -25,13 +25,19 @@ const VitalCard = ({ title, value, unit }) => (
   </div>
 );
 
+const InfoBox = ({ title, value }) => (
+  <div className="card info-box">
+    <h4>{title}</h4>
+    {value && <p>{value}</p>}
+  </div>
+);
+
 export default function PatientDashboard() {
   return (
-    <>
     <div className="dashboard">
-      {/* X axis */}
+      {/* TOP SECTION */}
       <div className="main-layout">
-        {/* 1/3 */}
+        {/* Left: Personal Detail */}
         <div className="card patient-card">
           <h2>Patient Details</h2>
           <p>Name: Dewi Rahmawati</p>
@@ -42,18 +48,25 @@ export default function PatientDashboard() {
             src="https://dummyimage.com/200x300/0f172a/38bdf8&text=Human+Body"
             alt="body"
           />
-          <button className="patient-button">MRI</button>
-          <button className="patient-button">View History</button>
         </div>
 
-        {/* 2/3 Y axis */}
+        {/* Right: Vital Cards */}
         <div className="vital-column">
           <VitalCard title="Heart Rate" value={72} unit="bpm" />
           <VitalCard title="Oxygen Saturation" value={99} unit="%" />
           <VitalCard title="Respiratory Rate" value={18} unit="rpm" />
         </div>
       </div>
+
+      {/* BOTTOM SECTION */}
+      <div className="info-row">
+        <InfoBox title="History" />
+        <InfoBox title="Blood Pressure" value="120 / 80 mmHg" />
+        <InfoBox title="Overall SOFA Score" value="5" />
+        <InfoBox title="Similar Patient" />
+        <InfoBox title="AI Recommendation" value="Personalized" />
+        <InfoBox title="Clinician Recommendation" />
+      </div>
     </div>
-    </>
   );
 }

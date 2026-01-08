@@ -63,7 +63,6 @@ export default function PatientDashboard() {
         <InfoBox title="History" />
         <InfoBox title="Blood Pressure" value="120 / 80 mmHg" />
         <InfoBox title="Overall SOFA Score" value="5" />
-        <InfoBox title="Similar Patient" />
         <InfoBox title="AI Recommendation" value="Personalized" />
         <InfoBox title="Clinician Recommendation" />
       </div>
